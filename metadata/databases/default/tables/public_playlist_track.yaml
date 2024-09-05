@@ -1,0 +1,3 @@
+table:
+  name: playlist_track
+  schema: public

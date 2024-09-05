@@ -1,0 +1,14 @@
+version: 3
+tables:
+  - table:
+      schema: public
+      name: artist
+    object_relationships: []
+    array_relationships: []
+    select_permissions:
+      - role: artist
+        permission:
+          columns: '*'
+          filter:
+            artist_id:
+              _eq: X-Hasura-Artist-Id
