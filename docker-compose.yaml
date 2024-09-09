@@ -31,5 +31,6 @@ services:
       HASURA_GRAPHQL_RATE_LIMIT_REDIS_URL: "redis://redis:6379"
       PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/chinook
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/chinook
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: artist
 volumes:
   db_data:
