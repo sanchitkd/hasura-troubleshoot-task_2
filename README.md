@@ -23,10 +23,6 @@ Hasura GraphQL with Chinook Database
   - If there are Untracked tables or views, Click on Track All.
 9. Apply the metadata.
 - `hasura metadata apply --endpoint http://localhost:8111 --admin-secret "myadminsecretkey"`
-```
-C:\Users\#\Desktop\hasura-troubleshoot-task_2-postgres-1>hasura metadata apply --endpoint http://localhost:8111 --admin-secret "myadminsecretkey"
-INFO Metadata applied
-```
 - Manual Steps:
   - Click on the “Data” tab in the top menu.
   - Select the albums Table:
