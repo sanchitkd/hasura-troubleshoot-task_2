@@ -1,4 +1,5 @@
 # 1ST QUERY: [header: x-hasura-admin-secret]
+```
 query getTracks($genre: String, $limit: Int, $offset: Int) {
 track (limit: $limit, offset: $offset, where: {genre: {name: {_eq: $genre}}})
 {
@@ -6,15 +7,17 @@ name
 genre_id
 }
 }
-
+```
 - Query Variable:
+```
 {
 "genre":"Metal",
 "limit": 5,
 "offset":50
 }
-
+```
 - OUTPUT:
+```
 {
   "data": {
     "track": [
@@ -41,16 +44,18 @@ genre_id
     ]
   }
 }
-
+```
 
 # 2ND QUERY: [Header: x-hasura-artist-id = 5]
+```
 query getAlbumsAsArtist{
 album {
 title
 }
 }
-
+```
 - OUTPUT:
+```
 {
   "data": {
     "album": [
@@ -60,9 +65,10 @@ title
     ]
   }
 }
-
+```
 
 # 3RD QUERY:
+```
 query trackValue {
 track_aggregate {
 aggregate {
@@ -72,9 +78,11 @@ unit_price
 }
 }
 }
+```
 
 - OUTPUT:
 	- With header: x-hasura-admin-secret
+```
 {
   "data": {
     "track_aggregate": {
@@ -86,8 +94,9 @@ unit_price
     }
   }
 }
-
-	- With header: x-hasura-artist-id = 5
+```
+- With header: x-hasura-artist-id = 5
+``` 
 {
   "errors": [
     {
@@ -99,6 +108,7 @@ unit_price
     }
   ]
 }
+```
 
 # COMPLEX QUERY
 ```
@@ -326,17 +336,12 @@ query getTrackDetails($limit: Int, $offset: Int) {
 ```
 
 - RESPONSE TIME WITH CACHING:
-Response Time
-76 ms
-Response Size
-839 bytes
-
+	- Response Time: 76 ms
+	- Response Size: 839 bytes
 
 - RESPONSE TIME WITHOUT CACHING:
-Response Time
-95 ms
-Response Size
-839 bytes
+	- Response Time: 95 ms
+	- Response Size: 839 bytes
 
 To Disable Caching in Docker Compose, update the docker-compose.yaml file:
 ```
