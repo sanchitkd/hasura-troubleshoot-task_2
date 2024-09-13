@@ -48,7 +48,8 @@ Hasura GraphQL with Chinook Database
   - Allow role artist to access columns: Toggle All
   - This filter ensures that artists can only access albums where the artist_id column matches the x-hasura-artist-id session variable.
   - Save the Permissions:
-    - Click "Save Permissions" or the equivalent button to save the row-level permissions for the artist role.
+	- Click "Save Permissions" or the equivalent button to save the row-level permissions for the artist role.
+  - Disable aggregate queries: In the permissions for albums, make sure that the allow_aggregations checkbox is unchecked for the artist role. 
 
 ## TASK CLEANUP:
 - `docker-compose down -v`
